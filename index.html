@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>手风琴画册</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #box{
+            overflow: hidden;
+        }
+        #box>div{
+            width: 150px;
+            height: 150px;
+            float: left;
+            overflow: hidden;
+            border-right: 1px solid #fff;
+            border-bottom: 1px solid #fff;
+            position: relative;
+            box-sizing: border-box;
+        }
+        #box>div>img{
+            /*无论父元素宽高怎么变  图片一直会居中*/
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            /*margin: 50% 50%;   !*向右移动父元素的50%，向下移动父元素的50%*!*/
+            transform: translate(-50%,-50%);   /*向左移动自身的50%，向下移动自身的50%*/
+        }
+        #box>div .text{
+            transition:all 1s .3s;
+            opacity: 0;
+            bottom: 0;
+            transform: translateY(100%);
+            position: absolute;
+            width: 340px;
+            background: rgba(255, 255, 255, 0.3);
+            padding: 10px 20px;
+            color: #ffffff;
+            box-sizing: border-box;
+        }
+        #box>div.active .text{
+            opacity: 1;
+            transform: translateY(0%);
+        }
+    </style>
+</head>
+<body>
+<div id = "box">
+    <div><img src="./images/image1.jpg" alt=""></div>
+    <div>
+        <img src="./images/image2.jpg" alt="">
+        <div class="text">
+            <p>some text here</p>
+        </div>
+    </div>
+    <div><img src="./images/image3.jpg" alt=""></div>
+    <div><img src="./images/image4.jpg" alt=""></div>
+    <div><img src="./images/image5.jpg" alt=""></div>
+    <div>
+        <img src="./images/image6.jpg" alt="">
+        <div class="text">
+            <h1>this is a big title</h1>
+            <p>Laborum anim quis non sint qui. Non deserunt laboris nulla proident tempor in occaecat. Excepteur proident ex veniam labore. Magna dolor sunt pariatur nisi nulla. Est pariatur amet cillum sint nostrud. Proident mollit occaecat exercitation minim nisi labore ullamco nulla mollit pariatur. Commodo aute est culpa pariatur velit tempor enim ipsum deserunt id non tempor.</p>
+        </div>
+    </div>
+    <div><img src="./images/image7.jpg" alt=""></div>
+    <div><img src="./images/image8.jpg" alt=""></div>
+    <div><img src="./images/image9.jpg" alt=""></div>
+    <div><img src="./images/image10.jpg" alt=""></div>
+    <div><img src="./images/image11.jpg" alt=""></div>
+    <div><img src="./images/image12.jpg" alt=""></div>
+    <div><img src="./images/image13.jpg" alt=""></div>
+    <div><img src="./images/image14.jpg" alt=""></div>
+    <div><img src="./images/image15.jpg" alt=""></div>
+    <div><img src="./images/image16.jpg" alt=""></div>
+    <div><img src="./images/image17.jpg" alt=""></div>
+    <div><img src="./images/image18.jpg" alt=""></div>
+    <div><img src="./images/image19.jpg" alt=""></div>
+    <div><img src="./images/image20.jpg" alt=""></div>
+</div>
+<script src="Accordion.js"></script>
+<script>
+    //设置用户设置信息
+    var option = {
+        col:5,
+        row:4
+    }
+    //传递一个id  和用户设置的信息
+    accordion("box",option);
+</script>
+</body>
+</html>
